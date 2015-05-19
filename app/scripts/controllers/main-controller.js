@@ -13,7 +13,11 @@
     .controller('MainCtrl', MainCtrl);
 
     function MainCtrl($scope, MainModel) {
-      $scope.data = MainModel.getCovers();
+      $scope.covers = MainModel.getCovers().then(function (data) {
+          $scope.covers = data;
+      });
+
+      console.log($scope);
     }
 
 })();

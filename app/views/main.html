@@ -1,4 +1,8 @@
 <div class="jumbotron">
   <h1>Reddit Album Covers</h1>
-
 </div>
+  <div class="row" >
+    <div class="col-xs-2"  ng-repeat="cover in covers">
+      <img src="{{cover.data.thumbnail}}" />
+    </div>
+  </div>

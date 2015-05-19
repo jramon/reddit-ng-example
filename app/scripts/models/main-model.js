@@ -7,14 +7,19 @@
 
     function MainModel ($http) {
       var model = this,
+          setCovers,
           url = 'data/covers.json';
 
-        model.getCovers =  function () {
-          return $http.get(url)
-                      .then(function (result) {
-                          console.log(result.data);
-                      });
-        }
+      model.getCovers = function () {
+
+        return $http.get(url)
+          .then(setCovers);
+      }
+
+      setCovers = function (data) {
+        return data.data.data.children;
+      }
+
     }
 
 })();
